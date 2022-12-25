@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { User } from "../model/userModel";
 
 @Component({
   selector: 'app-login',
@@ -9,9 +10,12 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
-  loginUserData: { email: string, password: string } = {
+  loginUserData: User = {
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    data: '',
+    imagePath:''
   }
 
   error: string = '';

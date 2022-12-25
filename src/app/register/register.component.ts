@@ -1,6 +1,7 @@
 import { Component, Injector } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from "@angular/router";
+import { User } from "../model/userModel";
 
 @Component({
   selector: 'app-register',
@@ -9,9 +10,12 @@ import { Router } from "@angular/router";
 })
 export class RegisterComponent {
 
-  registerUserData: { email: string, password: string } = {
+  registerUserData: User = {
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    data: '',
+    imagePath:''
   }
 
   error: string = '';

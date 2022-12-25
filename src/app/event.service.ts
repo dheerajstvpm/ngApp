@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Event } from './model/eventModel';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,11 @@ export class EventService {
   constructor(private http:HttpClient) {}
 
   getEvents(){
-    return this.http.get<any>(this._eventsUrl)
+    return this.http.get<Event[]>(this._eventsUrl)
   }
 
   getSpecial(){
-    return this.http.get<any>(this._specialEventsUrl)
+    return this.http.get<Event[]>(this._specialEventsUrl)
   }
 
 }

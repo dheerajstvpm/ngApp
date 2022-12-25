@@ -1,0 +1,26 @@
+<div class="row mt-5">
+    <div class="col-xs-8 col-sm-6 col-lg-4 mb-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">{{profileUserData.data}}</h5>
+                <img src="http://localhost:3000{{profileUserData.imagePath}}" id="userImage" alt="userImage">
+            </div>
+            <div class="card-footer text-muted">
+                {{profileUserData.name}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="file" class="file-input"
+       (change)="onFileSelected($event)" #fileUpload>
+
+<div class="file-upload">
+
+   {{fileName || "No file uploaded yet."}}
+
+    <button mat-mini-fab color="primary" class="upload-btn"
+      (click)="fileUpload.click()">
+        attach_file
+    </button>
+</div>
